@@ -11,8 +11,22 @@
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		BA4899EA12F1C912009349BF /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
 		BA489B1112F1D840009349BF /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
+		BA489B8D12F2C5C9009349BF /* NMParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BA489B8B12F2C5C9009349BF /* NMParser.h */; };
+		BA489B8E12F2C5C9009349BF /* NMParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489B8C12F2C5C9009349BF /* NMParser.m */; };
+		BA489B8F12F2C5C9009349BF /* NMParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489B8C12F2C5C9009349BF /* NMParser.m */; };
+		BA489B9612F2C5E4009349BF /* NMDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = BA489B9412F2C5E4009349BF /* NMDocument.h */; };
+		BA489B9712F2C5E4009349BF /* NMDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489B9512F2C5E4009349BF /* NMDocument.m */; };
+		BA489B9812F2C5E4009349BF /* NMDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489B9512F2C5E4009349BF /* NMDocument.m */; };
+		BA489B9B12F2C5F3009349BF /* NMParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489B9A12F2C5F3009349BF /* NMParagraph.m */; };
+		BA489B9C12F2C5F3009349BF /* NMParagraph.h in Headers */ = {isa = PBXBuildFile; fileRef = BA489B9912F2C5F3009349BF /* NMParagraph.h */; };
+		BA489B9D12F2C5F3009349BF /* NMParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489B9A12F2C5F3009349BF /* NMParagraph.m */; };
+		BA489D2412F2D119009349BF /* ParseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA489D2312F2D119009349BF /* ParseKit.framework */; };
+		BA489D3712F2D1A2009349BF /* NMDocumentAssembler.h in Headers */ = {isa = PBXBuildFile; fileRef = BA489D3512F2D1A2009349BF /* NMDocumentAssembler.h */; };
+		BA489D3812F2D1A2009349BF /* NMDocumentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */; };
+		BA489D4012F2D29C009349BF /* ParseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA489D2312F2D119009349BF /* ParseKit.framework */; };
+		BA489D7A12F2D2B7009349BF /* NMDocumentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */; };
 		BAB4C5D912F1BEAF0071765F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59812F1BAB90071765F /* main.m */; };
-		BAB4C5DA12F1BEAF0071765F /* ParagraphSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* ParagraphSpec.m */; };
+		BAB4C5DA12F1BEAF0071765F /* ParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* ParserSpec.m */; };
 		BAB4C5FD12F1BF0A0071765F /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4C5FC12F1BF0A0071765F /* Cedar.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +52,17 @@
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* MarkupParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarkupParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4899E912F1C912009349BF /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrest.framework; path = Library/Frameworks/OCHamcrest.framework; sourceTree = SDKROOT; };
+		BA489B8B12F2C5C9009349BF /* NMParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMParser.h; sourceTree = "<group>"; };
+		BA489B8C12F2C5C9009349BF /* NMParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMParser.m; sourceTree = "<group>"; };
+		BA489B9412F2C5E4009349BF /* NMDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMDocument.h; sourceTree = "<group>"; };
+		BA489B9512F2C5E4009349BF /* NMDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMDocument.m; sourceTree = "<group>"; };
+		BA489B9912F2C5F3009349BF /* NMParagraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMParagraph.h; sourceTree = "<group>"; };
+		BA489B9A12F2C5F3009349BF /* NMParagraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMParagraph.m; sourceTree = "<group>"; };
+		BA489D2312F2D119009349BF /* ParseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseKit.framework; path = Library/Frameworks/ParseKit.framework; sourceTree = SDKROOT; };
+		BA489D3512F2D1A2009349BF /* NMDocumentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMDocumentAssembler.h; sourceTree = "<group>"; };
+		BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMDocumentAssembler.m; sourceTree = "<group>"; };
 		BAB4C59812F1BAB90071765F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Specs/main.m; sourceTree = "<group>"; };
-		BAB4C59912F1BAB90071765F /* ParagraphSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParagraphSpec.m; path = Specs/ParagraphSpec.m; sourceTree = "<group>"; };
+		BAB4C59912F1BAB90071765F /* ParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserSpec.m; path = Specs/ParserSpec.m; sourceTree = "<group>"; };
 		BAB4C5C912F1BE580071765F /* Specs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB4C5FC12F1BF0A0071765F /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cedar.framework; path = Library/Frameworks/Cedar.framework; sourceTree = SDKROOT; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -51,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+				BA489D2412F2D119009349BF /* ParseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +84,7 @@
 			files = (
 				BAB4C5FD12F1BF0A0071765F /* Cedar.framework in Frameworks */,
 				BA4899EA12F1C912009349BF /* OCHamcrest.framework in Frameworks */,
+				BA489D4012F2D29C009349BF /* ParseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +116,7 @@
 		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BA489D2312F2D119009349BF /* ParseKit.framework */,
 				BA4899E912F1C912009349BF /* OCHamcrest.framework */,
 				BAB4C5FC12F1BF0A0071765F /* Cedar.framework */,
 				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
@@ -111,6 +137,14 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA489B8B12F2C5C9009349BF /* NMParser.h */,
+				BA489B8C12F2C5C9009349BF /* NMParser.m */,
+				BA489B9412F2C5E4009349BF /* NMDocument.h */,
+				BA489B9512F2C5E4009349BF /* NMDocument.m */,
+				BA489B9912F2C5F3009349BF /* NMParagraph.h */,
+				BA489B9A12F2C5F3009349BF /* NMParagraph.m */,
+				BA489D3512F2D1A2009349BF /* NMDocumentAssembler.h */,
+				BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -145,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB4C59812F1BAB90071765F /* main.m */,
-				BAB4C59912F1BAB90071765F /* ParagraphSpec.m */,
+				BAB4C59912F1BAB90071765F /* ParserSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -157,6 +191,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA489B8D12F2C5C9009349BF /* NMParser.h in Headers */,
+				BA489B9612F2C5E4009349BF /* NMDocument.h in Headers */,
+				BA489B9C12F2C5F3009349BF /* NMParagraph.h in Headers */,
+				BA489D3712F2D1A2009349BF /* NMDocumentAssembler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA489B8E12F2C5C9009349BF /* NMParser.m in Sources */,
+				BA489B9712F2C5E4009349BF /* NMDocument.m in Sources */,
+				BA489B9D12F2C5F3009349BF /* NMParagraph.m in Sources */,
+				BA489D3812F2D1A2009349BF /* NMDocumentAssembler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB4C5D912F1BEAF0071765F /* main.m in Sources */,
-				BAB4C5DA12F1BEAF0071765F /* ParagraphSpec.m in Sources */,
+				BAB4C5DA12F1BEAF0071765F /* ParserSpec.m in Sources */,
+				BA489B8F12F2C5C9009349BF /* NMParser.m in Sources */,
+				BA489B9812F2C5E4009349BF /* NMDocument.m in Sources */,
+				BA489B9B12F2C5F3009349BF /* NMParagraph.m in Sources */,
+				BA489D7A12F2D2B7009349BF /* NMDocumentAssembler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +320,10 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../todparsekit-read-only/build/Debug\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -281,6 +331,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MarkupParser_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				PRODUCT_NAME = MarkupParser;
@@ -295,10 +346,15 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../todparsekit-read-only/build/Debug\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MarkupParser_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				PRODUCT_NAME = MarkupParser;
@@ -364,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -374,7 +431,9 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/bin;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -383,6 +442,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = Specs;
+				SDKROOT = macosx10.6;
 				ZERO_LINK = NO;
 			};
 			name = Release;
