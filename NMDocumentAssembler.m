@@ -5,28 +5,25 @@
 
 @implementation NMDocumentAssembler
 
-@synthesize document;
-
-- (id)init {
-	if (self = [super init]) {
-		self.document = [[NMDocument alloc] init];
+- (NMDocument *)currentFrom:(PKAssembly *)assembly {
+	if (!assembly.target) {
+		assembly.target = [NMDocument document];
 	}
-	return self;
+	
+	return (NMDocument *)assembly.target;
 }
 
-- (void)didMatchParagraph:(PKAssembly *)assembly {
-	NSMutableArray *contents = [[NSMutableArray alloc] init];
-	while (![assembly isStackEmpty]) {
-		[contents insertObject:[assembly pop] atIndex:0]; 
-	}
-	NMParagraph *paragraph = [[NMParagraph alloc] init];
-	paragraph.content = [contents componentsJoinedByString:@""];
-	[self.document.items addObject:paragraph];
-	[contents release];
+- (void)didMatchWord:(PKAssembly *)assembly {
+	NMDocument *doc = [self currentFrom:assembly];
+	[[doc currentParagraph] addWord:[[assembly pop] stringValue]];
 }
 
-- (void)dealloc {
-	[self.document release];
-	[super dealloc];
+- (void)didMatchParaSeparator:(PKAssembly *)assembly {
+	[[self currentFrom:assembly] startNewParagraph];
 }
+
+- (void)didMatchDocument:(PKAssembly *)assembly {
+	[self currentFrom:assembly];
+}
+
 @end

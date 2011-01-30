@@ -1,10 +1,13 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface NMParagraph : NSObject {
-	NSString *content;
+@interface NMParagraph : NSObject<NSCopying> {
+	NSMutableString *content;
 }
 
-@property(nonatomic, retain) NSString *content;
+- (void)addWord:(NSString *)word;
++ (NMParagraph *)paragraph;
+
+@property(nonatomic, retain) NSMutableString *content;
 
 @end

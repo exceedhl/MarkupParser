@@ -4,10 +4,11 @@
 @class PKAssembly;
 
 @interface NMDocumentAssembler : NSObject {
-	NMDocument *document;
 }
 
-- (void)didMatchParagraph:(PKAssembly *)assembly;
+- (void)didMatchWord:(PKAssembly *)assembly;
+- (void)didMatchParaSeparator:(PKAssembly *)assembly;
+- (void)didMatchDocument:(PKAssembly *)assembly;
+- (NMDocument *)currentFrom:(PKAssembly *)assembly;
 
-@property(nonatomic, retain) NMDocument *document;
 @end

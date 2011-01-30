@@ -26,7 +26,7 @@
 		BA489D4012F2D29C009349BF /* ParseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA489D2312F2D119009349BF /* ParseKit.framework */; };
 		BA489D7A12F2D2B7009349BF /* NMDocumentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */; };
 		BAB4C5D912F1BEAF0071765F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59812F1BAB90071765F /* main.m */; };
-		BAB4C5DA12F1BEAF0071765F /* ParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* ParserSpec.m */; };
+		BAB4C5DA12F1BEAF0071765F /* DocumentParsingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */; };
 		BAB4C5FD12F1BF0A0071765F /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4C5FC12F1BF0A0071765F /* Cedar.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +62,7 @@
 		BA489D3512F2D1A2009349BF /* NMDocumentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMDocumentAssembler.h; sourceTree = "<group>"; };
 		BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMDocumentAssembler.m; sourceTree = "<group>"; };
 		BAB4C59812F1BAB90071765F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Specs/main.m; sourceTree = "<group>"; };
-		BAB4C59912F1BAB90071765F /* ParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserSpec.m; path = Specs/ParserSpec.m; sourceTree = "<group>"; };
+		BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentParsingSpec.m; path = Specs/DocumentParsingSpec.m; sourceTree = "<group>"; };
 		BAB4C5C912F1BE580071765F /* Specs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB4C5FC12F1BF0A0071765F /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cedar.framework; path = Library/Frameworks/Cedar.framework; sourceTree = SDKROOT; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -179,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB4C59812F1BAB90071765F /* main.m */,
-				BAB4C59912F1BAB90071765F /* ParserSpec.m */,
+				BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB4C5D912F1BEAF0071765F /* main.m in Sources */,
-				BAB4C5DA12F1BEAF0071765F /* ParserSpec.m in Sources */,
+				BAB4C5DA12F1BEAF0071765F /* DocumentParsingSpec.m in Sources */,
 				BA489B8F12F2C5C9009349BF /* NMParser.m in Sources */,
 				BA489B9812F2C5E4009349BF /* NMDocument.m in Sources */,
 				BA489B9B12F2C5F3009349BF /* NMParagraph.m in Sources */,
