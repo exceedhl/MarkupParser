@@ -5,6 +5,9 @@
 #define TAB '\x09'
 #define NEWLINE '\x0A'
 #define RETURN '\x0D'
+#define DOUBLE_NEWLINE ([NSString stringWithFormat:@"%c%c", NEWLINE, NEWLINE])
+#define DOUBLE_RETURN ([NSString stringWithFormat:@"%c%c", RETURN, RETURN])
+#define DOUBLE_RETURN_NEWLINE ([NSString stringWithFormat:@"%c%c%c%c", RETURN, NEWLINE, RETURN, NEWLINE])
 
 @interface NMParser() {}
 
@@ -17,50 +20,6 @@
 
 
 @implementation NMParser
-
-- (PKParser *)paraSeparatorParser:(NMDocumentAssembler *)assembler {
-	PKSymbol *paraSeperator1 = [PKSymbol symbolWithString:@"\x0A\x0A"];
-	PKSymbol *paraSeperator2 = [PKSymbol symbolWithString:@"\x0D\x0D"];
-	PKSymbol *paraSeperator3 = [PKSymbol symbolWithString:@"\x0D\x0A\x0D\x0A"];
-	PKAlternation *paraSeperator = [PKAlternation alternation];
-	[paraSeperator add:paraSeperator1];
-	[paraSeperator add:paraSeperator2];
-	[paraSeperator add:paraSeperator3];
-	
-	[paraSeperator setAssembler:assembler selector:@selector(didMatchParaSeparator:)];
-	return paraSeperator;
-}
-
-- (PKParser *)textParser:(NMDocumentAssembler *)assembler {
-	PKSymbol *n = [PKSymbol symbolWithString:@"\x0A"];
-	PKSymbol *r = [PKSymbol symbolWithString:@"\x0D"];
-	
-	PKAlternation *text = [PKAlternation alternation];
-	[text add:[PKWord word]];
-	[text add:n];
-	[text add:r];
-	
-	[text setAssembler:assembler selector:@selector(didMatchText:)];
-	return text;
-}
-
-- (PKParser *)paragraphParser:(NMDocumentAssembler *)assembler {
-	return [PKRepetition repetitionWithSubparser:[self textParser:assembler]];
-}
-
-- (PKParser *)documentParser:(NMDocumentAssembler *)assembler {
-	PKParser *paraParser = [self paragraphParser:assembler];
-
-	PKSequence *morePara = [PKSequence sequence];
-	[morePara add:[self paraSeparatorParser:assembler]];
-	[morePara add:paraParser];
-	
-	PKSequence *doc = [PKSequence sequence];	
-	[doc add:paraParser];
-	[doc add:[PKRepetition repetitionWithSubparser:morePara]];	
-	[doc setAssembler:assembler selector:@selector(didMatchDocument:)];
-	return doc;
-}
 
 - (NMDocument *)parse:(NSString *)documentContent { 
 	
@@ -85,10 +44,54 @@
 	
 	[t setTokenizerState:t.symbolState from:NEWLINE to:NEWLINE];
 	[t setTokenizerState:t.symbolState from:RETURN to:RETURN];
-	[t.symbolState add:[NSString stringWithFormat:@"%c%c", NEWLINE, NEWLINE]];
-	[t.symbolState add:[NSString stringWithFormat:@"%c%c", RETURN, RETURN]];
-	[t.symbolState add:[NSString stringWithFormat:@"%c%c%c%c", RETURN, NEWLINE, RETURN, NEWLINE]];
+	[t.symbolState add:DOUBLE_NEWLINE];
+	[t.symbolState add:DOUBLE_RETURN];
+	[t.symbolState add:DOUBLE_RETURN_NEWLINE];
 	return t;
+}
+
+- (PKParser *)paraSeparatorParser:(NMDocumentAssembler *)assembler {
+	PKSymbol *paraSeperator1 = [PKSymbol symbolWithString:DOUBLE_RETURN];
+	PKSymbol *paraSeperator2 = [PKSymbol symbolWithString:DOUBLE_NEWLINE];
+	PKSymbol *paraSeperator3 = [PKSymbol symbolWithString:DOUBLE_RETURN_NEWLINE];
+	PKAlternation *paraSeperator = [PKAlternation alternation];
+	[paraSeperator add:paraSeperator1];
+	[paraSeperator add:paraSeperator2];
+	[paraSeperator add:paraSeperator3];
+	
+	[paraSeperator setAssembler:assembler selector:@selector(didMatchParaSeparator:)];
+	return paraSeperator;
+}
+
+- (PKParser *)textParser:(NMDocumentAssembler *)assembler {
+	PKSymbol *n = [PKSymbol symbolWithString:[NSString stringWithFormat:@"%c", RETURN]];
+	PKSymbol *r = [PKSymbol symbolWithString:[NSString stringWithFormat:@"%c", NEWLINE]];
+	
+	PKAlternation *text = [PKAlternation alternation];
+	[text add:[PKWord word]];
+	[text add:n];
+	[text add:r];
+	
+	[text setAssembler:assembler selector:@selector(didMatchText:)];
+	return text;
+}
+
+- (PKParser *)paragraphParser:(NMDocumentAssembler *)assembler {
+	return [PKRepetition repetitionWithSubparser:[self textParser:assembler]];
+}
+
+- (PKParser *)documentParser:(NMDocumentAssembler *)assembler {
+	PKParser *paraParser = [self paragraphParser:assembler];
+	
+	PKSequence *morePara = [PKSequence sequence];
+	[morePara add:[self paraSeparatorParser:assembler]];
+	[morePara add:paraParser];
+	
+	PKSequence *doc = [PKSequence sequence];	
+	[doc add:paraParser];
+	[doc add:[PKRepetition repetitionWithSubparser:morePara]];	
+	[doc setAssembler:assembler selector:@selector(didMatchDocument:)];
+	return doc;
 }
 
 @end

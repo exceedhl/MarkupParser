@@ -6,6 +6,6 @@
 @interface NMParser : NSObject {
 }
 
-- (NMDocument *)parse:(NSString *)text;
+- (NMDocument *)parse:(NSString *)documentContent;
 
 @end
