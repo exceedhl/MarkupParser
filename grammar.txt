@@ -1,0 +1,15 @@
+@start = document;
+ 
+document = paragraph moreParagraph*;
+moreParagraph = paragraphSeparator paragraph;
+paragraph = (text | emText)*;
+text = Word | newline;
+
+newline = '\r' | '\n';
+paragraphSeparator = '\r\n\r\n' | '\r\r' | '\n\n';
+
+escapeTag = '\'
+escapedCharacters = '\\' | '\*'
+
+emTag = '*'
+emText = emTag text* emTag

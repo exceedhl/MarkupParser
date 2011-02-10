@@ -18,6 +18,10 @@
 	[doc addText:[[assembly pop] stringValue]];
 }
 
+- (void)didMatchEmphasizedTag:(PKAssembly *)assembly {
+	[[self currentFrom:assembly] startOrCloseEmphasizedText];
+}
+
 - (void)didMatchParaSeparator:(PKAssembly *)assembly {
 	[[self currentFrom:assembly] startNewParagraph];
 }

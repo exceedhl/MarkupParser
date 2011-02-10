@@ -41,6 +41,10 @@
 	[self.items addObject:[NMParagraph paragraph]];
 }
 
+- (void)startOrCloseEmphasizedText {
+	[[self currentParagraph] startOrCloseEmphasizedText];
+}
+
 - (void)dealloc {
 	[self.items release];
 	[super dealloc];

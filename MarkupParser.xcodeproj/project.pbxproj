@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		BA02CAC11303F15E0040907F /* grammar.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA02CAC01303F15E0040907F /* grammar.txt */; };
 		BA4899EA12F1C912009349BF /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
 		BA489B1112F1D840009349BF /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
 		BA489B8D12F2C5C9009349BF /* NMParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BA489B8B12F2C5C9009349BF /* NMParser.h */; };
@@ -58,6 +59,7 @@
 		32DBCF5E0370ADEE00C91783 /* MarkupParser_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkupParser_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* MarkupParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarkupParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA02CAC01303F15E0040907F /* grammar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grammar.txt; sourceTree = "<group>"; };
 		BA4899E912F1C912009349BF /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrest.framework; path = Library/Frameworks/OCHamcrest.framework; sourceTree = SDKROOT; };
 		BA489B8B12F2C5C9009349BF /* NMParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMParser.h; sourceTree = "<group>"; };
 		BA489B8C12F2C5C9009349BF /* NMParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMParser.m; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				32DBCF5E0370ADEE00C91783 /* MarkupParser_Prefix.pch */,
+				BA02CAC01303F15E0040907F /* grammar.txt */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				BA02CAC11303F15E0040907F /* grammar.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

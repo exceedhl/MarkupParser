@@ -1,5 +1,6 @@
 #import "NMParagraph.h"
 #import "NMText.h"
+#import "NMEmphasizedText.h"
 
 @interface NMParagraph() {}
 
@@ -34,10 +35,19 @@
 }
 
 - (id)currentItem {
-	if ([self.items count] == 0) {
+	if (currentItem == nil) {
 		[self.items addObject:[NMText text]];
 	}
-	return [self.items lastObject];
+	return currentItem = [self.items lastObject];
+}
+
+- (void)startOrCloseEmphasizedText {
+	if ([[self currentItem] isKindOfClass:[NMEmphasizedText class]]) {
+		currentItem = nil;
+		return;
+	}
+	[self.items addObject:[NMEmphasizedText text]];
+	currentItem = [self.items lastObject];
 }
 
 - (void)dealloc {

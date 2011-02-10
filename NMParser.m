@@ -5,9 +5,12 @@
 #define TAB '\x09'
 #define NEWLINE '\x0A'
 #define RETURN '\x0D'
+
 #define DOUBLE_NEWLINE ([NSString stringWithFormat:@"%c%c", NEWLINE, NEWLINE])
 #define DOUBLE_RETURN ([NSString stringWithFormat:@"%c%c", RETURN, RETURN])
 #define DOUBLE_RETURN_NEWLINE ([NSString stringWithFormat:@"%c%c%c%c", RETURN, NEWLINE, RETURN, NEWLINE])
+
+#define EM_TAG '*'
 
 @interface NMParser() {}
 
@@ -41,9 +44,11 @@
 	[t setTokenizerState:t.wordState from:TAB to:TAB];
 	[t.wordState setWordChars:YES from:32 to:255];
 	[t.wordState setWordChars:YES from:TAB to:TAB];
+	[t.wordState setWordChars:NO from:EM_TAG to:EM_TAG];
 	
 	[t setTokenizerState:t.symbolState from:NEWLINE to:NEWLINE];
 	[t setTokenizerState:t.symbolState from:RETURN to:RETURN];
+	[t setTokenizerState:t.symbolState from:EM_TAG to:EM_TAG];
 	[t.symbolState add:DOUBLE_NEWLINE];
 	[t.symbolState add:DOUBLE_RETURN];
 	[t.symbolState add:DOUBLE_RETURN_NEWLINE];
@@ -76,8 +81,24 @@
 	return text;
 }
 
+- (PKParser *)emTextParser:(NMDocumentAssembler *)assembler {
+	PKSymbol *emTag = [PKSymbol symbolWithString:[NSString stringWithFormat:@"%c", EM_TAG]];
+	[emTag discard];
+	PKSequence *emText = [PKSequence sequence];
+	[emText add:emTag];
+	[emText add:[PKRepetition repetitionWithSubparser:[self textParser:assembler]]];
+	[emText add:emTag];
+	
+	[emTag setAssembler:assembler selector:@selector(didMatchEmphasizedTag:)];
+	return emText;
+}
+
 - (PKParser *)paragraphParser:(NMDocumentAssembler *)assembler {
-	return [PKRepetition repetitionWithSubparser:[self textParser:assembler]];
+	PKAlternation *paraElement = [PKAlternation alternation];
+	[paraElement add:[self textParser:assembler]];
+	[paraElement add:[self emTextParser:assembler]];
+	
+	return [PKRepetition repetitionWithSubparser:paraElement];
 }
 
 - (PKParser *)documentParser:(NMDocumentAssembler *)assembler {
