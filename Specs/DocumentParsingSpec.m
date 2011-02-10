@@ -2,7 +2,7 @@
 
 SPEC_BEGIN(DocumentParsingSpec)
 
-describe(@"when parsing document", ^{
+describe(@"parsing document", ^{
 	describe(@"with empty content", ^{
 		it(@"should return a empty document", ^{
 			NSString *text = @"";
@@ -21,9 +21,9 @@ describe(@"when parsing document", ^{
 			NMDocument *doc = [parser parse:text];
 			assertEquals(2, [doc.items count]);
 			NMParagraph *paragraph = (NMParagraph *)[doc.items objectAtIndex:0];
-			assertThat(paragraph.content, equalTo(@"\n  \t  \t "));
+			assertThat(getFirstTextContent(paragraph), equalTo(@"\n  \t  \t "));
 			paragraph = (NMParagraph *)[doc.items objectAtIndex:1];
-			assertThat(paragraph.content, equalTo(@"   \r\n"));
+			assertThat(getFirstTextContent(paragraph), equalTo(@"   \r\n"));
 		});
 	});
 	
@@ -35,12 +35,10 @@ describe(@"when parsing document", ^{
 			NMDocument *doc = [parser parse:text];
 			assertEquals(1, [doc.items count]);
 			NMParagraph *paragraph = (NMParagraph *)[doc.items objectAtIndex:0];
-			assertThat(paragraph.content, equalTo(text));
+			assertThat(getFirstTextContent(paragraph), equalTo(text));
 		});
 	});
 	
 });
-
-
 
 SPEC_END

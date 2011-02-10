@@ -1,8 +1,11 @@
 #import "NMDocument.h"
 #import "NMParagraph.h"
 
-@implementation NMDocument
+@interface NMDocument() {}
+- (NMParagraph *)currentParagraph;
+@end
 
+@implementation NMDocument
 @synthesize items;
 
 - (id)init {
@@ -28,6 +31,10 @@
 	}
 
 	return [self.items lastObject];
+}
+
+- (void)addText:(NSString *)text {
+	[[self currentParagraph] addText:text];
 }
 
 - (void)startNewParagraph {

@@ -6,7 +6,7 @@
 @interface NMDocumentAssembler : NSObject {
 }
 
-- (void)didMatchWord:(PKAssembly *)assembly;
+- (void)didMatchText:(PKAssembly *)assembly;
 - (void)didMatchParaSeparator:(PKAssembly *)assembly;
 - (void)didMatchDocument:(PKAssembly *)assembly;
 - (NMDocument *)currentFrom:(PKAssembly *)assembly;

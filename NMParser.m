@@ -10,7 +10,7 @@
 
 
 @implementation NMParser
-- (NMDocument *)parse:(NSString *)text { 
+- (NMDocument *)parse:(NSString *)documentContent { 
 	
 	PKSymbol *paraSeperator1 = [PKSymbol symbolWithString:@"\x0A\x0A"];
 	PKSymbol *paraSeperator2 = [PKSymbol symbolWithString:@"\x0D\x0D"];
@@ -23,12 +23,12 @@
 	PKSymbol *n = [PKSymbol symbolWithString:@"\x0A"];
 	PKSymbol *r = [PKSymbol symbolWithString:@"\x0D"];
 	
-	PKAlternation *word = [PKAlternation alternation];
-	[word add:[PKWord word]];
-	[word add:n];
-	[word add:r];
+	PKAlternation *text = [PKAlternation alternation];
+	[text add:[PKWord word]];
+	[text add:n];
+	[text add:r];
 	
-	PKRepetition *para = [PKRepetition repetitionWithSubparser:word];
+	PKRepetition *para = [PKRepetition repetitionWithSubparser:text];
 	
 	PKSequence *doc = [PKSequence sequence];
 	[doc add:para];
@@ -41,11 +41,11 @@
 	[doc setTokenizer:[self getTokenizer]];
 	
 	NMDocumentAssembler *assembler = [[[NMDocumentAssembler alloc] init] autorelease];
-	[word setAssembler:assembler selector:@selector(didMatchWord:)];
+	[text setAssembler:assembler selector:@selector(didMatchText:)];
 	[paraSeperator setAssembler:assembler selector:@selector(didMatchParaSeparator:)];
 	[doc setAssembler:assembler selector:@selector(didMatchDocument:)];
 	
-	NMDocument *document = (NMDocument *)[doc parse:text];
+	NMDocument *document = (NMDocument *)[doc parse:documentContent];
 	
 	PKReleaseSubparserTree(doc);
 	

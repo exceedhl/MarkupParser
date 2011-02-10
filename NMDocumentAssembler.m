@@ -13,9 +13,9 @@
 	return (NMDocument *)assembly.target;
 }
 
-- (void)didMatchWord:(PKAssembly *)assembly {
+- (void)didMatchText:(PKAssembly *)assembly {
 	NMDocument *doc = [self currentFrom:assembly];
-	[[doc currentParagraph] addWord:[[assembly pop] stringValue]];
+	[doc addText:[[assembly pop] stringValue]];
 }
 
 - (void)didMatchParaSeparator:(PKAssembly *)assembly {

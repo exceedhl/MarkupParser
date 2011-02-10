@@ -7,8 +7,8 @@
 }
 
 + (NMDocument *)document;
-- (NMParagraph *)currentParagraph;
 - (void)startNewParagraph;
+- (void)addText:(NSString *)text;
 
 @property(nonatomic, retain) NSMutableArray *items;
 
