@@ -3,11 +3,17 @@
 SPEC_BEGIN(InlineMarkupSpec)
 
 describe(@"parsing paragraph", ^{
+	
+	__block NMParser *parser;
+	
+	beforeEach(^{
+		parser = [[[NMParser alloc] init] autorelease];
+	});
+	
 	describe(@"with emphasized markup text", ^{
 		it(@"should get paragraph with emphasized text object", ^{
 			NSString *text = @"this is a *emphasized text* in a paragraph.";
 			
-			NMParser *parser = [[[NMParser alloc] init] autorelease];
 			NMDocument *doc = [parser parse:text];
 			NMParagraph *paragraph = (NMParagraph *)[doc.items objectAtIndex:0];
 			assertEquals(3, [paragraph.items count]);

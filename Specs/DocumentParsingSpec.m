@@ -3,11 +3,17 @@
 SPEC_BEGIN(DocumentParsingSpec)
 
 describe(@"parsing document", ^{
+	
+	__block NMParser *parser;
+	
+	beforeEach(^{
+		parser = [[[NMParser alloc] init] autorelease];
+	});
+	
 	describe(@"with empty content", ^{
 		it(@"should return a empty document", ^{
 			NSString *text = @"";
 			
-			NMParser *parser = [[[NMParser alloc] init] autorelease];
 			NMDocument *doc = [parser parse:text];
 			assertEquals(0, [doc.items count]);
 		});
@@ -17,7 +23,6 @@ describe(@"parsing document", ^{
 		it(@"should return a valid document", ^{
 			NSString *text = @"\n  \t  \t \r\n\r\n   \r\n";
 			
-			NMParser *parser = [[[NMParser alloc] init] autorelease];
 			NMDocument *doc = [parser parse:text];
 			assertEquals(2, [doc.items count]);
 			NMParagraph *paragraph = (NMParagraph *)[doc.items objectAtIndex:0];
@@ -31,7 +36,6 @@ describe(@"parsing document", ^{
 		it(@"should return a doc with only one paragraph", ^{
 			NSString *text = @"this is a paragraph, and another sentence";
 			
-			NMParser *parser = [[[NMParser alloc] init] autorelease];
 			NMDocument *doc = [parser parse:text];
 			assertEquals(1, [doc.items count]);
 			NMParagraph *paragraph = (NMParagraph *)[doc.items objectAtIndex:0];
