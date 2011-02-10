@@ -10,6 +10,7 @@
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		BA02CAC11303F15E0040907F /* grammar.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA02CAC01303F15E0040907F /* grammar.txt */; };
+		BA03AF7A13043AA8003BA7FE /* DocumentParsingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */; };
 		BA4899EA12F1C912009349BF /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
 		BA489B1112F1D840009349BF /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
 		BA489B8D12F2C5C9009349BF /* NMParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BA489B8B12F2C5C9009349BF /* NMParser.h */; };
@@ -34,7 +35,6 @@
 		BA9CAD1B1303DF7A002A75AC /* NMEmphasizedText.h in Headers */ = {isa = PBXBuildFile; fileRef = BA9CAD181303DF7A002A75AC /* NMEmphasizedText.h */; };
 		BA9CAD1C1303DF7A002A75AC /* NMEmphasizedText.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAD191303DF7A002A75AC /* NMEmphasizedText.m */; };
 		BAB4C5D912F1BEAF0071765F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59812F1BAB90071765F /* main.m */; };
-		BAB4C5DA12F1BEAF0071765F /* DocumentParsingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */; };
 		BAB4C5FD12F1BF0A0071765F /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4C5FC12F1BF0A0071765F /* Cedar.framework */; };
 /* End PBXBuildFile section */
 
@@ -318,7 +318,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB4C5D912F1BEAF0071765F /* main.m in Sources */,
-				BAB4C5DA12F1BEAF0071765F /* DocumentParsingSpec.m in Sources */,
 				BA489B8F12F2C5C9009349BF /* NMParser.m in Sources */,
 				BA489B9812F2C5E4009349BF /* NMDocument.m in Sources */,
 				BA489B9B12F2C5F3009349BF /* NMParagraph.m in Sources */,
@@ -326,6 +325,7 @@
 				BA9CAC9D1303C963002A75AC /* InlineMarkupSpec.m in Sources */,
 				BA9CACB21303D47C002A75AC /* NMText.m in Sources */,
 				BA9CAD1A1303DF7A002A75AC /* NMEmphasizedText.m in Sources */,
+				BA03AF7A13043AA8003BA7FE /* DocumentParsingSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

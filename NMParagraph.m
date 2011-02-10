@@ -42,7 +42,7 @@
 }
 
 - (void)startOrCloseEmphasizedText {
-	if ([[self currentItem] isKindOfClass:[NMEmphasizedText class]]) {
+	if ([currentItem isKindOfClass:[NMEmphasizedText class]]) {
 		currentItem = nil;
 		return;
 	}

@@ -27,14 +27,41 @@ describe(@"parsing paragraph", ^{
 		});
 		
 		it(@"should allow empty markup text", ^{
+			NSString *text = @"**";
 			
+			NMDocument *doc = [parser parse:text];
+			NMParagraph *paragraph = (NMParagraph *)[doc.items objectAtIndex:0];
+			assertEquals(1, [paragraph.items count]);
+			NMEmphasizedText *emphasizedText = (NMEmphasizedText *)[paragraph.items objectAtIndex:0];
+			assertEquals(0, [emphasizedText.items count]);
 		});
 		
 		it(@"should allow newline in markup text", ^{
+			NSString *text = @"*emphasized\r text **in a \nparagraph.*";
 			
+			NMDocument *doc = [parser parse:text];
+			NMParagraph *paragraph = (NMParagraph *)[doc.items objectAtIndex:0];
+			assertEquals(2, [paragraph.items count]);
+			
+			NMEmphasizedText *emphasizedText = (NMEmphasizedText *)[paragraph.items objectAtIndex:0];
+			assertEquals(1, [emphasizedText.items count]);
+			assertThat(getFirstTextContent(emphasizedText), equalTo(@"emphasized\r text "));
+			
+			emphasizedText = (NMEmphasizedText *)[paragraph.items objectAtIndex:1];
+			assertEquals(1, [emphasizedText.items count]);
+			assertThat(getFirstTextContent(emphasizedText), equalTo(@"in a \nparagraph."));
 		});
 		
-		it(@"should treat unmatched tag as normal text", ^{
+		it(@"should handle unmatched tag", ^{
+			NSString *text = @"this is a *unmatched tag \r\n text";
+			
+			NMDocument *doc = [parser parse:text];
+			NMParagraph *paragraph = (NMParagraph *)[doc.items objectAtIndex:0];
+			assertEquals(2, [paragraph.items count]);
+			
+			NMEmphasizedText *emphasizedText = (NMEmphasizedText *)[paragraph.items objectAtIndex:1];
+			assertEquals(1, [emphasizedText.items count]);
+			assertThat(getFirstTextContent(emphasizedText), equalTo(@"unmatched tag \r\n text"));
 			
 		});
 		
