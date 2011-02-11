@@ -10,7 +10,6 @@
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		BA02CAC11303F15E0040907F /* grammar.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA02CAC01303F15E0040907F /* grammar.txt */; };
-		BA03AF7A13043AA8003BA7FE /* DocumentParsingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */; };
 		BA4899EA12F1C912009349BF /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
 		BA489B1112F1D840009349BF /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
 		BA489B8D12F2C5C9009349BF /* NMParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BA489B8B12F2C5C9009349BF /* NMParser.h */; };
@@ -27,6 +26,10 @@
 		BA489D3812F2D1A2009349BF /* NMDocumentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */; };
 		BA489D4012F2D29C009349BF /* ParseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA489D2312F2D119009349BF /* ParseKit.framework */; };
 		BA489D7A12F2D2B7009349BF /* NMDocumentAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */; };
+		BA84004013057B3800ED777F /* PKTryTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = BA84003E13057B3800ED777F /* PKTryTrack.h */; };
+		BA84004113057B3800ED777F /* PKTryTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BA84003F13057B3800ED777F /* PKTryTrack.m */; };
+		BA8400BB13057E7100ED777F /* PKTryTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BA84003F13057B3800ED777F /* PKTryTrack.m */; };
+		BA840108130581C700ED777F /* DocumentParsingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */; };
 		BA9CAC9D1303C963002A75AC /* InlineMarkupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAC9C1303C963002A75AC /* InlineMarkupSpec.m */; };
 		BA9CACB21303D47C002A75AC /* NMText.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CACB11303D47C002A75AC /* NMText.m */; };
 		BA9CACB31303D47C002A75AC /* NMText.h in Headers */ = {isa = PBXBuildFile; fileRef = BA9CACB01303D47C002A75AC /* NMText.h */; };
@@ -70,6 +73,8 @@
 		BA489D2312F2D119009349BF /* ParseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseKit.framework; path = Library/Frameworks/ParseKit.framework; sourceTree = SDKROOT; };
 		BA489D3512F2D1A2009349BF /* NMDocumentAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMDocumentAssembler.h; sourceTree = "<group>"; };
 		BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMDocumentAssembler.m; sourceTree = "<group>"; };
+		BA84003E13057B3800ED777F /* PKTryTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTryTrack.h; sourceTree = "<group>"; };
+		BA84003F13057B3800ED777F /* PKTryTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTryTrack.m; sourceTree = "<group>"; };
 		BA9CAC8D1303C6BE002A75AC /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestHelper.h; path = Specs/TestHelper.h; sourceTree = "<group>"; };
 		BA9CAC9C1303C963002A75AC /* InlineMarkupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InlineMarkupSpec.m; path = Specs/InlineMarkupSpec.m; sourceTree = "<group>"; };
 		BA9CACB01303D47C002A75AC /* NMText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMText.h; sourceTree = "<group>"; };
@@ -164,6 +169,8 @@
 				BA9CACB11303D47C002A75AC /* NMText.m */,
 				BA9CAD181303DF7A002A75AC /* NMEmphasizedText.h */,
 				BA9CAD191303DF7A002A75AC /* NMEmphasizedText.m */,
+				BA84003E13057B3800ED777F /* PKTryTrack.h */,
+				BA84003F13057B3800ED777F /* PKTryTrack.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 				BA489D3712F2D1A2009349BF /* NMDocumentAssembler.h in Headers */,
 				BA9CACB31303D47C002A75AC /* NMText.h in Headers */,
 				BA9CAD1B1303DF7A002A75AC /* NMEmphasizedText.h in Headers */,
+				BA84004013057B3800ED777F /* PKTryTrack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +318,7 @@
 				BA489D3812F2D1A2009349BF /* NMDocumentAssembler.m in Sources */,
 				BA9CACB41303D47C002A75AC /* NMText.m in Sources */,
 				BA9CAD1C1303DF7A002A75AC /* NMEmphasizedText.m in Sources */,
+				BA84004113057B3800ED777F /* PKTryTrack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +334,8 @@
 				BA9CAC9D1303C963002A75AC /* InlineMarkupSpec.m in Sources */,
 				BA9CACB21303D47C002A75AC /* NMText.m in Sources */,
 				BA9CAD1A1303DF7A002A75AC /* NMEmphasizedText.m in Sources */,
-				BA03AF7A13043AA8003BA7FE /* DocumentParsingSpec.m in Sources */,
+				BA8400BB13057E7100ED777F /* PKTryTrack.m in Sources */,
+				BA840108130581C700ED777F /* DocumentParsingSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

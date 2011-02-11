@@ -1,6 +1,7 @@
 #import "NMParser.h"
 #import <ParseKit/ParseKit.h>
 #import "NMDocumentAssembler.h"
+#import "PKTryTrack.h"
 
 #define TAB '\x09'
 #define NEWLINE '\x0A'
@@ -84,7 +85,7 @@
 - (PKParser *)emTextParser:(NMDocumentAssembler *)assembler {
 	PKSymbol *emTag = [PKSymbol symbolWithString:[NSString stringWithFormat:@"%c", EM_TAG]];
 	[emTag discard];
-	PKSequence *emText = [PKSequence sequence];
+	PKTryTrack *emText = [PKTryTrack track];
 	[emText add:emTag];
 	[emText add:[PKRepetition repetitionWithSubparser:[self textParser:assembler]]];
 	[emText add:emTag];
