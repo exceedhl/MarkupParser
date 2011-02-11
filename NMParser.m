@@ -46,13 +46,17 @@
 	[t.wordState setWordChars:YES from:32 to:255];
 	[t.wordState setWordChars:YES from:TAB to:TAB];
 	[t.wordState setWordChars:NO from:EM_TAG to:EM_TAG];
+	[t.wordState setWordChars:NO from:'\\' to:'\\'];
 	
 	[t setTokenizerState:t.symbolState from:NEWLINE to:NEWLINE];
 	[t setTokenizerState:t.symbolState from:RETURN to:RETURN];
 	[t setTokenizerState:t.symbolState from:EM_TAG to:EM_TAG];
+	[t setTokenizerState:t.symbolState from:'\\' to:'\\'];
 	[t.symbolState add:DOUBLE_NEWLINE];
 	[t.symbolState add:DOUBLE_RETURN];
 	[t.symbolState add:DOUBLE_RETURN_NEWLINE];
+	[t.symbolState add:@"\\\\"];
+	[t.symbolState add:@"\\*"];
 	return t;
 }
 
@@ -72,13 +76,25 @@
 - (PKParser *)textParser:(NMDocumentAssembler *)assembler {
 	PKSymbol *n = [PKSymbol symbolWithString:[NSString stringWithFormat:@"%c", RETURN]];
 	PKSymbol *r = [PKSymbol symbolWithString:[NSString stringWithFormat:@"%c", NEWLINE]];
+	PKSymbol *literal_escape1 = [PKSymbol symbolWithString:@"\\\\"];
+	PKSymbol *literal_escape2 = [PKSymbol symbolWithString:@"\\"];
+	PKSymbol *literal_em_tag = [PKSymbol symbolWithString:@"\\*"];
 	
 	PKAlternation *text = [PKAlternation alternation];
-	[text add:[PKWord word]];
+	PKWord *word = [PKWord word];
+	[text add:word];
 	[text add:n];
 	[text add:r];
+	[text add:literal_em_tag];
+	[text add:literal_escape1];
+	[text add:literal_escape2];
 	
-	[text setAssembler:assembler selector:@selector(didMatchText:)];
+	[word setAssembler:assembler selector:@selector(didMatchText:)];
+	[r setAssembler:assembler selector:@selector(didMatchText:)];
+	[n setAssembler:assembler selector:@selector(didMatchText:)];
+	[literal_escape2 setAssembler:assembler selector:@selector(didMatchText:)];
+	[literal_em_tag setAssembler:assembler selector:@selector(didMatchLiteralText:)];
+	[literal_escape1 setAssembler:assembler selector:@selector(didMatchLiteralText:)];
 	return text;
 }
 

@@ -29,7 +29,11 @@
 		BA84004013057B3800ED777F /* PKTryTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = BA84003E13057B3800ED777F /* PKTryTrack.h */; };
 		BA84004113057B3800ED777F /* PKTryTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BA84003F13057B3800ED777F /* PKTryTrack.m */; };
 		BA8400BB13057E7100ED777F /* PKTryTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BA84003F13057B3800ED777F /* PKTryTrack.m */; };
-		BA840108130581C700ED777F /* DocumentParsingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */; };
+		BA840144130588B900ED777F /* NSString+NMParserAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BA840142130588B900ED777F /* NSString+NMParserAdditions.h */; };
+		BA840145130588B900ED777F /* NSString+NMParserAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA840143130588B900ED777F /* NSString+NMParserAdditions.m */; };
+		BA840146130588B900ED777F /* NSString+NMParserAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA840143130588B900ED777F /* NSString+NMParserAdditions.m */; };
+		BA84014A1305893500ED777F /* NSStringNMParserAdditionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8401491305893500ED777F /* NSStringNMParserAdditionsSpec.m */; };
+		BA84018B13058E7500ED777F /* DocumentParsingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */; };
 		BA9CAC9D1303C963002A75AC /* InlineMarkupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAC9C1303C963002A75AC /* InlineMarkupSpec.m */; };
 		BA9CACB21303D47C002A75AC /* NMText.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CACB11303D47C002A75AC /* NMText.m */; };
 		BA9CACB31303D47C002A75AC /* NMText.h in Headers */ = {isa = PBXBuildFile; fileRef = BA9CACB01303D47C002A75AC /* NMText.h */; };
@@ -75,6 +79,9 @@
 		BA489D3612F2D1A2009349BF /* NMDocumentAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMDocumentAssembler.m; sourceTree = "<group>"; };
 		BA84003E13057B3800ED777F /* PKTryTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTryTrack.h; sourceTree = "<group>"; };
 		BA84003F13057B3800ED777F /* PKTryTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTryTrack.m; sourceTree = "<group>"; };
+		BA840142130588B900ED777F /* NSString+NMParserAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NMParserAdditions.h"; sourceTree = "<group>"; };
+		BA840143130588B900ED777F /* NSString+NMParserAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NMParserAdditions.m"; sourceTree = "<group>"; };
+		BA8401491305893500ED777F /* NSStringNMParserAdditionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringNMParserAdditionsSpec.m; sourceTree = "<group>"; };
 		BA9CAC8D1303C6BE002A75AC /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestHelper.h; path = Specs/TestHelper.h; sourceTree = "<group>"; };
 		BA9CAC9C1303C963002A75AC /* InlineMarkupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InlineMarkupSpec.m; path = Specs/InlineMarkupSpec.m; sourceTree = "<group>"; };
 		BA9CACB01303D47C002A75AC /* NMText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMText.h; sourceTree = "<group>"; };
@@ -171,6 +178,8 @@
 				BA9CAD191303DF7A002A75AC /* NMEmphasizedText.m */,
 				BA84003E13057B3800ED777F /* PKTryTrack.h */,
 				BA84003F13057B3800ED777F /* PKTryTrack.m */,
+				BA840142130588B900ED777F /* NSString+NMParserAdditions.h */,
+				BA840143130588B900ED777F /* NSString+NMParserAdditions.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -209,6 +218,7 @@
 				BAB4C59912F1BAB90071765F /* DocumentParsingSpec.m */,
 				BA9CAC8D1303C6BE002A75AC /* TestHelper.h */,
 				BA9CAC9C1303C963002A75AC /* InlineMarkupSpec.m */,
+				BA8401491305893500ED777F /* NSStringNMParserAdditionsSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -227,6 +237,7 @@
 				BA9CACB31303D47C002A75AC /* NMText.h in Headers */,
 				BA9CAD1B1303DF7A002A75AC /* NMEmphasizedText.h in Headers */,
 				BA84004013057B3800ED777F /* PKTryTrack.h in Headers */,
+				BA840144130588B900ED777F /* NSString+NMParserAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +330,7 @@
 				BA9CACB41303D47C002A75AC /* NMText.m in Sources */,
 				BA9CAD1C1303DF7A002A75AC /* NMEmphasizedText.m in Sources */,
 				BA84004113057B3800ED777F /* PKTryTrack.m in Sources */,
+				BA840145130588B900ED777F /* NSString+NMParserAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +347,9 @@
 				BA9CACB21303D47C002A75AC /* NMText.m in Sources */,
 				BA9CAD1A1303DF7A002A75AC /* NMEmphasizedText.m in Sources */,
 				BA8400BB13057E7100ED777F /* PKTryTrack.m in Sources */,
-				BA840108130581C700ED777F /* DocumentParsingSpec.m in Sources */,
+				BA840146130588B900ED777F /* NSString+NMParserAdditions.m in Sources */,
+				BA84014A1305893500ED777F /* NSStringNMParserAdditionsSpec.m in Sources */,
+				BA84018B13058E7500ED777F /* DocumentParsingSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

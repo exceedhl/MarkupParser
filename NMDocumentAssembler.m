@@ -18,6 +18,11 @@
 	[doc addText:[[assembly pop] stringValue]];
 }
 
+- (void)didMatchLiteralText:(PKAssembly *)assembly {
+	NMDocument *doc = [self currentFrom:assembly];
+	[doc addText:[[[assembly pop] stringValue] stripPrefixBackslash]];
+}
+
 - (void)didMatchEmphasizedTag:(PKAssembly *)assembly {
 	[[self currentFrom:assembly] startOrCloseEmphasizedText];
 }

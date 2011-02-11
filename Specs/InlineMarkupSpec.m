@@ -66,11 +66,17 @@ describe(@"parsing paragraph", ^{
 		});
 		
 		it(@"should ignore tag by preceding escape character", ^{
+			NSString *text = @"\\ \\\\\\**\\*\\\\*";
 			
-		});
-		
-		it(@"should allow escaped tag in markup text", ^{
+			NMDocument *doc = [parser parse:text];
+			NMParagraph *paragraph = (NMParagraph *)[doc.items objectAtIndex:0];
+			assertEquals(2, [paragraph.items count]);
 			
+			assertThat(getFirstTextContent(paragraph), equalTo(@"\\ \\*"));
+			
+			NMEmphasizedText *emphasizedText = (NMEmphasizedText *)[paragraph.items objectAtIndex:1];
+			assertEquals(1, [emphasizedText.items count]);
+			assertThat(getFirstTextContent(emphasizedText), equalTo(@"*\\"));
 		});
 	});
 	

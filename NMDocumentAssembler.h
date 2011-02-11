@@ -7,6 +7,7 @@
 }
 
 - (void)didMatchText:(PKAssembly *)assembly;
+- (void)didMatchLiteralText:(PKAssembly *)assembly;
 - (void)didMatchParaSeparator:(PKAssembly *)assembly;
 - (void)didMatchDocument:(PKAssembly *)assembly;
 - (void)didMatchEmphasizedTag:(PKAssembly *)assembly;
