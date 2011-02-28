@@ -16,6 +16,12 @@
 	return [[[self alloc] init] autorelease];
 }
 
++ (id)textWithString:(NSString *)string {
+	NMText *text = [[self alloc] init];
+	[text.content appendString:string];
+	return [text autorelease];
+}
+
 - (void)addText:(NSString *)text {
 	[self.content appendString:text];
 }
@@ -24,6 +30,21 @@
 	NMText *copy = NSAllocateObject([self class], 0, zone);
 	copy.content = [self.content mutableCopyWithZone:zone];
 	return copy;
+}
+
+- (BOOL)isEqual:(id)other {
+	if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+    if (![self.content isEqual:((NMText *)other).content])
+        return NO;
+    return YES;
+}
+
+- (NSUInteger)hash
+{
+	return [self.content hash];
 }
 
 - (void)dealloc {

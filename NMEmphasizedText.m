@@ -7,17 +7,7 @@
 
 @end
 
-
 @implementation NMEmphasizedText
-@synthesize items;
-
-- (id)init {
-	if (self = [super init]) {
-		self.items = [[NSMutableArray alloc] init];
-	}
-	return self;
-}
-
 + (id)text {
 	return [[[self alloc] init] autorelease];
 }
@@ -31,17 +21,6 @@
 		[self.items addObject:[NMText text]];
 	}
 	return [self.items lastObject];
-}
-
-- (id)copyWithZone:(NSZone *)zone {
-	NMEmphasizedText *copy = NSAllocateObject([self class], 0, zone);
-	copy.items = [self.items mutableCopyWithZone:zone];
-	return copy;
-}
-
-- (void)dealloc {
-	[self.items release];
-	[super dealloc];
 }
 
 @end

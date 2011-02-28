@@ -6,6 +6,7 @@
 }
 
 + (id)text;
++ (id)textWithString:(NSString *)string;
 - (void)addText:(NSString *)text;
 	
 @property(nonatomic, retain) NSMutableString *content;

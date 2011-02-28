@@ -10,6 +10,10 @@
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		BA02CAC11303F15E0040907F /* grammar.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA02CAC01303F15E0040907F /* grammar.txt */; };
+		BA1D1BAD131BE5F3009FB5AE /* SpikeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1D1BAC131BE5F3009FB5AE /* SpikeSpec.m */; };
+		BA1D1BBF131BE860009FB5AE /* NMContainerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1D1BBE131BE860009FB5AE /* NMContainerSpec.m */; };
+		BA1D1BD6131BEF5B009FB5AE /* NMContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1D1BD5131BEF5B009FB5AE /* NMContainer.m */; };
+		BA1D1BF2131BF16A009FB5AE /* NMTextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1D1BF1131BF16A009FB5AE /* NMTextSpec.m */; };
 		BA4899EA12F1C912009349BF /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
 		BA489B1112F1D840009349BF /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BA4899E912F1C912009349BF /* OCHamcrest.framework */; };
 		BA489B8D12F2C5C9009349BF /* NMParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BA489B8B12F2C5C9009349BF /* NMParser.h */; };
@@ -67,6 +71,11 @@
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* MarkupParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarkupParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA02CAC01303F15E0040907F /* grammar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grammar.txt; sourceTree = "<group>"; };
+		BA1D1BAC131BE5F3009FB5AE /* SpikeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpikeSpec.m; sourceTree = "<group>"; };
+		BA1D1BBE131BE860009FB5AE /* NMContainerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMContainerSpec.m; sourceTree = "<group>"; };
+		BA1D1BD4131BEF5B009FB5AE /* NMContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMContainer.h; sourceTree = "<group>"; };
+		BA1D1BD5131BEF5B009FB5AE /* NMContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMContainer.m; sourceTree = "<group>"; };
+		BA1D1BF1131BF16A009FB5AE /* NMTextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMTextSpec.m; sourceTree = "<group>"; };
 		BA4899E912F1C912009349BF /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrest.framework; path = Library/Frameworks/OCHamcrest.framework; sourceTree = SDKROOT; };
 		BA489B8B12F2C5C9009349BF /* NMParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMParser.h; sourceTree = "<group>"; };
 		BA489B8C12F2C5C9009349BF /* NMParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMParser.m; sourceTree = "<group>"; };
@@ -164,6 +173,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BA1D1BD4131BEF5B009FB5AE /* NMContainer.h */,
+				BA1D1BD5131BEF5B009FB5AE /* NMContainer.m */,
 				BA489B8B12F2C5C9009349BF /* NMParser.h */,
 				BA489B8C12F2C5C9009349BF /* NMParser.m */,
 				BA489B9412F2C5E4009349BF /* NMDocument.h */,
@@ -219,6 +230,9 @@
 				BA9CAC8D1303C6BE002A75AC /* TestHelper.h */,
 				BA9CAC9C1303C963002A75AC /* InlineMarkupSpec.m */,
 				BA8401491305893500ED777F /* NSStringNMParserAdditionsSpec.m */,
+				BA1D1BAC131BE5F3009FB5AE /* SpikeSpec.m */,
+				BA1D1BBE131BE860009FB5AE /* NMContainerSpec.m */,
+				BA1D1BF1131BF16A009FB5AE /* NMTextSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -350,6 +364,10 @@
 				BA840146130588B900ED777F /* NSString+NMParserAdditions.m in Sources */,
 				BA84014A1305893500ED777F /* NSStringNMParserAdditionsSpec.m in Sources */,
 				BA84018B13058E7500ED777F /* DocumentParsingSpec.m in Sources */,
+				BA1D1BAD131BE5F3009FB5AE /* SpikeSpec.m in Sources */,
+				BA1D1BBF131BE860009FB5AE /* NMContainerSpec.m in Sources */,
+				BA1D1BD6131BEF5B009FB5AE /* NMContainer.m in Sources */,
+				BA1D1BF2131BF16A009FB5AE /* NMTextSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

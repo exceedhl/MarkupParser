@@ -1,16 +1,12 @@
 #import <Cocoa/Cocoa.h>
+#import "NMContainer.h"
 
-@class NMParagraph;
-
-@interface NMDocument : NSObject<NSCopying> {
-	NSMutableArray *items;
+@interface NMDocument : NMContainer<NSCopying> {
 }
 
 + (NMDocument *)document;
 - (void)startNewParagraph;
 - (void)startOrCloseEmphasizedText;
 - (void)addText:(NSString *)text;
-
-@property(nonatomic, retain) NSMutableArray *items;
 
 @end

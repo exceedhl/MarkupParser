@@ -1,13 +1,10 @@
 #import <Cocoa/Cocoa.h>
+#import "NMContainer.h"
 
-
-@interface NMEmphasizedText : NSObject<NSCopying> {
-	NSMutableArray *items;
+@interface NMEmphasizedText : NMContainer<NSCopying> {
 }
 
 + (id)text;
 - (void)addText:(NSString *)text;
-
-@property(nonatomic, retain) NSMutableArray *items;
 
 @end
